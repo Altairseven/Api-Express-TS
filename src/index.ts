@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import PersonaController from "./controllers/PersonaController";
+import cors from "cors";
 
 const app: Application = express();
 const port = 3001;
@@ -8,36 +9,15 @@ const port = 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(
+    cors({
+        methods: "*",
+        origin: "*",
+        allowedHeaders: "*",
+    })
+);
 
 app.use("/persona", PersonaController);
-
-
-
-
-
-
-// app.post("/persona", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-// app.put("/persona", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-// app.patch("/persona", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-// app.patch("/persona/updateFechaCompra", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-// app.patch("/persona/updatefechaNacimiento", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-// app.delete("/persona", async (req: Request, res: Response): Promise<Response> => {
-//     return res.status(200).send({ message: "recontra muerto" });
-// });
-
-
-
-
 
 
 try {
