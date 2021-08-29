@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from "express";
-import PersonaController from "./controllers/PersonaController";
+import PersonaController from "./controllers/PersonaControllerfinal";
 import cors from "cors";
 
 const app: Application = express();

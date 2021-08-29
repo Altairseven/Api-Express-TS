@@ -1,11 +1,15 @@
 export interface Persona{
-    id: string;
-    nombre: string;
-    apellido: string;
-    fechaNac: Date;
-    nroDocumento: string;
-    cuit: string;
+    id: number;
+    name: string;
+    lastName: string;
     email: string;
+    birthDay: Date;
+    recordDate: Date;
+    idTipoDocumento: number;
+    nombreTipoDocumento: string;
+}
 
-
+export default interface TipoDocumento{
+    id: number;
+    name: string;
 }
