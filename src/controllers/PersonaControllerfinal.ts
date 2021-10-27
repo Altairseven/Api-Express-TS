@@ -5,10 +5,6 @@ import { DatabaseService } from "../services/databaseService";
 
 const PersonaController = express.Router();
 
-
-
-
-
 PersonaController.get("/", async (req: Request, res: Response): Promise<Response<Array<Persona>>> => {
     const _db = new DatabaseService();
     try { 
@@ -47,9 +43,6 @@ PersonaController.post("/", async (req: Request<Persona>, res: Response): Promis
         await _db.rollbackTransaction();
         return res.status(500).send(error);
     }
-
-
-
 });
 
 PersonaController.put("/", async (req: Request<Persona>, res: Response): Promise<Response<Persona>> => {
